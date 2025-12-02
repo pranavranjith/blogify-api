@@ -1,16 +1,10 @@
-
-
 const express = require('express');
 const router = express.Router();
 
+// 1. IMPORT THE CONTROLLER
+const postController = require('../controllers/posts.controller.js');
 
-router.get('/', (req, res) => {
-  res.send('Fetching all blog posts from the modular router!');
-});
-
-
-router.post('/', (req, res) => {
-  res.send('Creating a new blog post...');
-});
+// 2. USE THE CONTROLLER FUNCTION
+router.get('/', postController.getAllPosts);
 
 module.exports = router;
